@@ -15,3 +15,10 @@ Below are the procedures to deploy this cache store. <BR>
 9. Start JDG by running JDG/bin/clustered.sh  <BR>
 10. run addUser.sh to add a user in ApplicationRealm with REST role <BR>
 11. Test gettting data with URL http://localhost:8080/test/cacheStore <BR>
+
+Notes on what has changed in source code: <BR>
+- Added javax.persistence.spi.PersistenceProvider and org.infinispan.persistence.spi.AdvancedLoadWriteStore to META-INF/services <BR>
+- Added jboss-deployment-structure.xml and persistence.xml to META-INF/ <BR>
+- Modified JpaStore to create own EntityManagerFactory <BR>
+- Modified JpaStoreConfigurationBuilder to change type of entityClass from Class to String <BR>
+- Added Person entity class for testing <BR>
